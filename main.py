@@ -5,12 +5,10 @@ def encode(s):
     for i in range(1, len(s)):
         board.append(board[i-1][-1] + board[i-1][:len(s) - 1])
     board.sort()
-    c = 0
-    result = ''
+    c, result = 0, ''
     for i in range(len(s)):
         result += board[i][-1]
-        if board[i] == s:
-            c = i
+        if board[i] == s: c = i
     return (result, c)
 
 def decode(s, n):
